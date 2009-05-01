@@ -33,11 +33,12 @@ body {
 
 table {
   background: #999;
+  width: 100%;
 }
 
 td { 
   background: #fff;
-  min-width: 10em;
+  width: 12.5%;
 }
 
 th {
