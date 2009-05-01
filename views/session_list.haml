@@ -1,0 +1,16 @@
+!!! Strict
+- @days ||= days
+%html
+  %head
+    %title BarCamp Portland 2009
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/css/barcamp.css' }
+    %script{ :type => 'text/javascript', :src => '/js/jquery.min.js' }
+    %script{ :type => 'text/javascript', :src => '/js/monitter.min.js' }
+  %body
+    - @days.each do |day,times|
+      %h2= day
+      %ul
+        - times.values.map{|rooms| rooms.values }.flatten.compact.each do |session|
+          - unless session[:description].empty? || session[:key] == '---'
+            %li
+              %a{ :href => "/notes/#{session[:key]}" }= session[:description]

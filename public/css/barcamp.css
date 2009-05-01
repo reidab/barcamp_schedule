@@ -1,0 +1,45 @@
+body {
+  font: 75%/1.5 "Helvetica Neue", Arial, Helvetica;
+}
+
+
+.tweet {
+  display: block;
+  background: #BABABA;
+  clear: both;
+  padding: .6em;
+  margin: .3em;
+  overflow: hidden;
+}
+.tweet img {
+  float: left;
+  margin-right: 1em;
+  border: 2px solid #222;
+  background: #444;
+}
+.tweet p.text {
+  margin: 0;
+  padding: 0;
+  padding-left: 70px;
+}
+.monitter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 280px;
+  overflow:hidden;
+}
+
+table {
+  background: #999;
+}
+
+td { 
+  background: #fff;
+  min-width: 10em;
+}
+
+th {
+  background: #ccc;
+}

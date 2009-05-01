@@ -1,0 +1,33 @@
+!!! Strict
+%html
+  %head
+    %title BarCamp Portland 2009
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '/css/barcamp.css' }
+
+- @days.each do |day,times|
+  %h2= day
+  %table
+    %thead
+      %tr
+        %th
+        - times.first.keys.reject{|r| r == "All Rooms"}.each do |room|
+          %th= room
+    %tbody
+      - times.each do |time,rooms|
+        %tr
+          %th
+            = time
+            - unless rooms["All Rooms"][:description].empty?
+              %p= rooms["All Rooms"][:description]
+          - rooms.reject{|r,v| r == "All Rooms"}.each do |room,session|
+            %td
+              - unless session[:description].empty? || session[:key] == '---'
+                %a{ :href => "/notes/#{session[:key]}" }= session[:description]
+              - else
+                =session[:description]
+  %ul
+    - times.values.map{|rooms| rooms.values }.flatten.compact.each do |session|
+      - unless session[:description].empty? || session[:key] == '---'
+        %li
+          %a{ :href => "/notes/#{session[:key]}" }= session[:description]
+  
