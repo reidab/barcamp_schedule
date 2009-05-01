@@ -9,5 +9,5 @@ data.add_missing_keys
 grid_engine = Haml::Engine.new(File.read('views/schedule_grid.haml'))
 list_engine = Haml::Engine.new(File.read('views/session_list.haml'))
 
-File.write('static/grid.html',grid_engine.render(Object.new,{:days => data.days}))
-File.write('static/list.html',list_engine.render(Object.new,{:days => data.days}))
+File.write('public/grid.html',grid_engine.render(Object.new,{:days => data.days}))
+File.write('public/list.html',list_engine.render(Object.new,{:days => data.days}))
