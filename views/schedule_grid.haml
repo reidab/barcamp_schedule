@@ -30,7 +30,7 @@
                   - unless rooms["All Rooms"][:description].empty?
                     %p= rooms["All Rooms"][:description]
                 - rooms.reject{|r,v| r == "All Rooms"}.each do |room,session|
-                  %tdla
+                  %td
                     =session[:description].gsub(/@([^ \n\r$]+)/,"@<a href='http://twitter.com/#{$1}'>#{$1}</a>")
                     - unless session[:description].empty? || session[:key] == '---'
                       %div
