@@ -3,12 +3,21 @@
 %html
   %head
     %title BarCamp Portland 2009
-    %link{ :rel => 'stylesheet', :type => 'text/css', :href => 'css/barcamp.css' }
+    %link{ :rel => 'stylesheet', :type => 'text/css', :href => '../css/barcamp.css' }
   %body
-    - @days.each do |day,times|
-      %h2= day
+    #header
+      %h1 
+        %a{ :href => '/' } BarCamp Portland 2009
       %ul
-        - times.values.map{|rooms| rooms.values }.flatten.compact.each do |session|
-          - unless session[:description].empty? || session[:key] == '---'
-            %li
-              %a{ :href => "/notes/#{session[:key]}" }= session[:description]
+        %li
+          %a{ :href => '/' } Schedule
+        %li
+          %a{ :href=> '/sessions', :class => 'active' } Session Notes
+    #content.schedule
+      - @days.each do |day,times|
+        %h2= day
+        %ul
+          - times.values.map{|rooms| rooms.values }.flatten.compact.each do |session|
+            - unless session[:description].empty? || session[:key] == '---'
+              %li
+                %a{ :href => "/notes/#{session[:key]}" }== #{session[:description]}

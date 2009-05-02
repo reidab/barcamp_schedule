@@ -6,9 +6,9 @@ require 'facets/dictionary'
 
 class BarCampData
   
-  GOOGLE_LOGIN = ''
-  GOOGLE_PASSWORD = ''
-  SPREADSHEET_KEY = ''
+  GOOGLE_LOGIN = 'barcamp@reidbeels.com'
+  GOOGLE_PASSWORD = 'nomnomnom'
+  SPREADSHEET_KEY = 'rm-yYix4xAxq7hQbOd-R-Rg'
 
   ID_REGEX = /\[id:([^\]]{3})\]/
   ID_CHARACTERS = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten

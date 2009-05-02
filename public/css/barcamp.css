@@ -1,5 +1,82 @@
 body {
   font: 75%/1.5 "Helvetica Neue", Arial, Helvetica;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  background: #750b0b url(../i/barcamp_mascot.png) no-repeat 20px 5px;
+  color :#fff;
+  position: relative;
+  height: 65px;
+  margin-top: -1.5em;
+}
+
+#header h1 a {
+  color: #fff;
+  display: block;
+  width: 129px;
+  height: 42px;
+  background: url(../i/barcamp_text.png) no-repeat;
+  overflow: hidden;
+  text-indent: -999px;
+  position: absolute;
+  top: 12px;
+  left: 170px;
+}
+
+#header ul {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 1em;
+  bottom: 0;
+}
+
+#header li {
+  list-style: none;
+  float: left;
+  margin-left: 1em;
+}
+
+#header li a {
+  display: block;
+  padding: .5em 1em;
+  color: #fff;
+  background: #9E0005;
+  -moz-border-radius-topleft: .5em;
+  -webkit-border-top-left-radius: .5em;
+  -moz-border-radius-topright: .5em;
+  -webkit-border-top-right-radius: .5em;
+  text-decoration: none;
+}
+
+#header li a.active {
+  background: #fff;
+  color: #222;
+}
+
+#content {
+  padding: 1.5em;
+}
+
+.schedule table {
+  background: #ccc;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule td { 
+  padding: 1em;
+  background: #fff;
+  width: 12.5%;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+.schedule th {
+  border: 1px solid #ccc;
+  background: #eee;
 }
 
 
@@ -31,16 +108,3 @@ body {
   overflow:hidden;
 }
 
-table {
-  background: #999;
-  width: 100%;
-}
-
-td { 
-  background: #fff;
-  width: 12.5%;
-}
-
-th {
-  background: #ccc;
-}
