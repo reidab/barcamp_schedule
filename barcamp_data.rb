@@ -11,7 +11,7 @@ class BarCampData
   SPREADSHEET_KEY = 'rm-yYix4xAxq7hQbOd-R-Rg'
 
   ID_REGEX = /\[id:([^\]]{3})\]/
-  ID_CHARACTERS = [('a'..'z'),('A'..'Z'),('0'..'9')].map{|i| i.to_a}.flatten
+  ID_CHARACTERS = [('a'..'z'),('0'..'9')].map{|i| i.to_a}.flatten
   
   attr_reader :days
   

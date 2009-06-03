@@ -4,6 +4,14 @@ body {
   padding: 0;
 }
 
+a.notes {
+  color: #9B3F3F;
+}
+
+a,a.notes.exists {
+  color: #0584B4;
+}
+
 #header {
   background: #750b0b url(../i/barcamp_mascot.png) no-repeat 20px 5px;
   color :#fff;
