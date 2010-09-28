@@ -13,11 +13,13 @@
           %a{ :href => '/' } Schedule
         %li
           %a{ :href=> '/sessions', :class => 'active' } Session Notes
+        %li
+          %a{ :href=>'/chat' } Chat
     #content.schedule
       - @days.each do |day,times|
         %h2= day
         %ul
-          - times.values.map{|rooms| rooms.values }.flatten.compact.each do |session|
+          - times.values.map{|rooms| rooms.values }.flatten.compact.sort{|a,b| a[:description] <=> b[:description]}.each do |session|
             - unless session[:description].empty? || session[:key] == '---'
               %li
-                %a{ :href => "/notes/#{session[:key]}" }== #{session[:description]}
+                = wiki_link(session[:key],session[:description]) 

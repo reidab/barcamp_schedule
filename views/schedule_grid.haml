@@ -13,6 +13,8 @@
           %a{ :href => '/', :class => 'active' } Schedule
         %li
           %a{ :href=> '/sessions' } Session Notes
+        %li
+          %a{ :href=>'/chat' } Chat
     #content.schedule
       - @days.each do |day,times|
         %h2= day
@@ -23,7 +25,15 @@
               - times.first.keys.reject{|r| r == "All Rooms"}.each do |room|
                 %th= room
           %tbody
+            - counter = 0
             - times.each do |time,rooms|
+              - counter += 1
+              - if counter==6
+                - counter = 0
+                %tr
+                  %th
+                  - rooms.keys.reject{|r| r == "All Rooms"}.each do |room|
+                    %th= room
               %tr
                 %th
                   = time
@@ -35,4 +45,4 @@
                     - unless session[:description].empty? || session[:key] == '---'
                       %div
                         &rarr;
-                        %a{ :href => "/notes/#{session[:key]}", :class=>"notes" } notes
+                        = wiki_link(session[:key])
